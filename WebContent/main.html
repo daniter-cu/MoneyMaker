@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="application/javascript">
+		var cash = 0.0;
+		var timeout = null;
+		localStorage.increment = 100/3600;
+		var increment = Number(localStorage.increment);
+		function makeMoney()
+		{
+			cash+=increment;
+			updateCounter();
+			timeout = setTimeout("makeMoney()",1000);
+		}
+		
+		function start()
+		{
+			makeMoney();
+		}
+		
+		function stop()
+		{
+			clearTimeout(timeout);
+		}
+		
+		function reset()
+		{
+			cash = 0.0;
+			updateCounter();
+		}
+		
+		function updateCounter()
+		{
+			document.getElementById("Money").innerHTML = "$"+cash.toFixed(2);
+		}
+	</script>
+<title>Money Maker</title>
+</head>
+<body>
+	<div id="TitleBanner">
+		Hello World, Let's make some money!
+	</div>
+	<div id="Money">
+		$0.00
+	</div>
+	<div id="buttons">
+		<button type="button" onclick="start();">Start</button>
+		<button type="button" onclick="stop();">Stop</button>
+		<button type="button" onclick="reset();">Reset</button>
+		<button type="button">Promotion</button>
+	</div>
+</body>
+</html>
