@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Home</title>
+		<script type="application/javascript">
+		function onLoad()
+		{
+			if (localStorage.increment)
+			{
+				alert(localStorage.increment);
+				document.getElementById("frame").src = "main.html";		
+			}
+			else
+			{
+				document.getElementById("frame").src = "coolermain.html";
+			}
+		}
+		</script>
+	</head>
+	<body onload="onLoad()">
+		<iframe id="frame" frameborder="0" height="100%" width="100%"></iframe>
+	</body>
+</html>
