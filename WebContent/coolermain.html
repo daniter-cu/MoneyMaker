@@ -2,24 +2,18 @@
 	<title>
 		Money Maker
 	</title>
-	<h1>Money Maker Web Page</h1>
-
-
-	<input type="textInput" id="1">
-	
-		
-	<input type="button" value="button" onCLick="printText(getText())">
-		
-	<script type="text/javascript">
-		function printText(txt) {
-			alert(txt);
-		}
-		
-		function getText() {
-			return document.getElementById("1").value;
-		}
-	</script>
-	
-		
-
+	<body>
+		<h1>Money Maker Web Page</h1>
+		<input type="textInput" id="text">
+		<input type="button" value="button" onCLick="printText(getText())">
+		<script type="text/javascript">
+			function printText(txt) {
+				alert(txt);
+			}
+			
+			function getText() {
+				return document.getElementById("text").value;
+			}
+		</script>
+	</body>
 </html>
